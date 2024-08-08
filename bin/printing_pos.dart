@@ -20,7 +20,8 @@ Future<void> main() async {
     final List<dynamic> list = data["products"];
     final List<OrderProduct> products = list.map((e) => OrderProduct.fromJson(e)).toList();
 
-    print(order_model);
+    print(order_model.cmd_code);
+    print(order_model.proforma_code);
     print(products);
 
     final savedPdf = await ComptoireOrder().printStock(order_model,products);
