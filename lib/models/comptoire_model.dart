@@ -7,11 +7,17 @@ class ComptoireOrderModel {
   final String? proforma_code;
   final String order_time;
   final String responsable;
+  final String section;
+  final String? fiche_number;
+  final String? devis_number;
+  final String? car_no_plate;
  
 
-  ComptoireOrderModel({this.cmd_code, this.proforma_code, required this.order_time, required this.responsable});
+  ComptoireOrderModel({ required this.section, this.fiche_number, this.devis_number, this.car_no_plate, this.cmd_code, this.proforma_code, required this.order_time, required this.responsable});
   factory ComptoireOrderModel.fromJson(dynamic json) {
-    return ComptoireOrderModel(cmd_code: json['cmd_code'], proforma_code: json['proforma_code'], order_time: json['order_time'], responsable: json['responsable']);
+    return ComptoireOrderModel(
+      fiche_number: json['fiche_number'],devis_number: json['devis_number'], car_no_plate: json['car_no_plate'],
+      cmd_code: json['cmd_code'], proforma_code: json['proforma_code'], order_time: json['order_time'], responsable: json['responsable'], section: json['section']);
   }
 }
 
