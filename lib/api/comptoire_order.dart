@@ -26,11 +26,13 @@ Future<bool> printStock(ComptoireOrderModel orderModel, List<OrderProduct> produ
             generator.text("No. ${orderModel.cmd_code == null ? ' P.' : 'C.'}:${orderModel.cmd_code ?? orderModel.proforma_code} ",styles:
                   const PosStyles(codeTable: 'CP1252', align: PosAlign.right,bold: true));
         }else {
-          generator.text("No. Fiche:${orderModel.fiche_number ?? ""} ",styles:
+          generator.text("No. Fiche:${orderModel.fiche_number ?? "-"} ",styles:
                   const PosStyles(codeTable: 'CP1252', align: PosAlign.right,bold: true));
-          generator.text("No. devis:${orderModel.devis_number ?? ""} ",styles:
+          generator.text("No. devis:${orderModel.devis_number ?? "-"} ",styles:
                   const PosStyles(codeTable: 'CP1252', align: PosAlign.right,bold: true));
-          generator.text("Plaque :${orderModel.car_no_plate ?? ""} ",styles:
+          generator.text("Plaque :${orderModel.car_no_plate ?? "-"} ",styles:
+                  const PosStyles(codeTable: 'CP1252', align: PosAlign.right,bold: true));
+          generator.text("Client :${orderModel.client_name ?? "-"} ",styles:
                   const PosStyles(codeTable: 'CP1252', align: PosAlign.right,bold: true));
         }
       
