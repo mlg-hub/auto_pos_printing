@@ -23,6 +23,7 @@ Future<void> main() async {
     print(order_model.cmd_code);
     print(order_model.proforma_code);
     print(products);
+    print(order_model);
 
     final savedPdf = await ComptoireOrder().printStock(order_model,products);
     return Response.ok(json.encode(savedPdf ? "printed" : "failed"));
